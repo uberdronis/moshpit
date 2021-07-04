@@ -18,30 +18,6 @@ WHITE = "#ffffff"
 BLUE = "#002147"
 
 
-def main():
-    # Setup screen, and cursor
-    turtle.title("Happy Birthday America! 2021!")
-    canvas = turtle.Screen()
-    canvas.setup(height=FLAG_HEIGHT * 1.1, width=FLAG_WIDTH * 1.1)
-    canvas.bgcolor(BLACK)
-    cursor = turtle.Turtle()
-    cursor.shape("turtle")
-    cursor.speed(0)
-
-    # Draw Stripes
-    draw_stripes(cursor)
-
-    # Draw Blue Background (stars)
-    draw_rectangle(cursor, STARTING_POINT, BLUE, STAR_BG_WIDTH, STAR_BG_HEIGHT)
-
-    # Draw Stars
-    draw_stars(cursor)
-
-    # Hide cursor and Leave screen open until closed by user
-    cursor.ht()
-    turtle.done()
-
-
 def draw_rectangle(pen, starting_position, color, width, height):
     pen.penup()
     pen.goto(starting_position)
@@ -104,6 +80,30 @@ def draw_stars(pen):
             STARTING_POINT[0] + (STAR_SPACER_H * 2),
             star_location[1] - (STAR_SPACER_V * 2),
         )
+
+
+def main():
+    # Setup screen, and cursor
+    turtle.title("Happy Birthday America! 2021!")
+    canvas = turtle.Screen()
+    canvas.setup(height=FLAG_HEIGHT * 1.1, width=FLAG_WIDTH * 1.1)
+    canvas.bgcolor(BLACK)
+    cursor = turtle.Turtle()
+    cursor.shape("turtle")
+    cursor.speed(0)
+
+    # Draw Stripes
+    draw_stripes(cursor)
+
+    # Draw Blue Background (stars)
+    draw_rectangle(cursor, STARTING_POINT, BLUE, STAR_BG_WIDTH, STAR_BG_HEIGHT)
+
+    # Draw Stars
+    draw_stars(cursor)
+
+    # Hide cursor and Leave screen open until closed by user
+    cursor.ht()
+    turtle.done()
 
 
 if __name__ == "__main__":
